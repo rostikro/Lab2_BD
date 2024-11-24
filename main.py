@@ -1,5 +1,4 @@
 import time
-import uuid
 
 from mongodb_controller import MongoController  # Adjust the import according to your file structure
 from postgres_controller import PostgresController  # Adjust the import according to your file structure

@@ -6,7 +6,6 @@ from faker import Faker
 import uuid
 import datetime
 
-
 class PostgresController:
     def __init__(self, db_name, db_user, db_password, db_host, db_port):
         self.dbname = db_name

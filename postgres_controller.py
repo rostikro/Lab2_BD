@@ -1,5 +1,4 @@
 import csv
-import subprocess
 
 import psycopg2
 import random
@@ -145,7 +144,22 @@ class PostgresController:
 
         with self.conn.cursor() as cur:
             cur.execute("SELECT * FROM products WHERE id = %s", (product_id,))
-            return cur.fetchone()  # Returns a single product record or None
+            product = cur.fetchone()
+
+            if product is None:
+                return 0
+            
+            cur.execute("SELECT * FROM product_images WHERE product_images.ProductId = %s", (product_id,))
+            images = cur.fetchall()
+
+            cur.execute("SELECT * FROM product_specs WHERE product_specs.ProductId = %s", (product_id,))
+            specs = cur.fetchall()
+
+            return {
+                "Product": product,
+                "Images": images,
+                "Specs": specs,
+            }
         
 
     def get_random_product_id(self):

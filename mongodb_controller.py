@@ -4,7 +4,6 @@ import random
 from faker import Faker
 from bson import ObjectId
 import json
-import subprocess
 
 class MongoController:
     def __init__(self, uri, db_name, collection_name):

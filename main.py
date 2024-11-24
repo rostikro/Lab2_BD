@@ -12,7 +12,7 @@ mongo_collection_name = "products"
 # Postgres SQL connection details
 pg_db_name = "products"
 pg_user = "postgres"
-pg_password = "password"
+pg_password = "123R"
 pg_host = "localhost"
 pg_port = "5432"
 
